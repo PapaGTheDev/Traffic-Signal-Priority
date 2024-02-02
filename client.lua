@@ -18,8 +18,8 @@ local trafficLightObjects = {
 }
 
 -- Client side event to set traffic light green, wait and reset state
-RegisterNetEvent("SmartTrafficLights:setLight")
-AddEventHandler("SmartTrafficLights:setLight", function(coords)
+RegisterNetEvent("PapaGTraffic:setLight")
+AddEventHandler("PapaGTraffic:setLight", function(coords)
     -- Find traffic light using trafficLightObjects array
     for _, trafficLightObject in pairs(trafficLightObjects) do
         trafficLight = GetClosestObjectOfType(coords, 1.0, trafficLightObject, false, false, false)
@@ -88,7 +88,7 @@ Citizen.CreateThread(function()
                         print("[Debug] Traffic light within view.")
                           if GetVehicleClass(vehicle) == 18 and IsVehicleSirenOn(vehicle) then
                                     print("[Debug] Emergency vehicle with active siren detected, setting traffic light to green.")
-                                    TriggerServerEvent('SmartTrafficLights:setLight', GetEntityCoords(trafficLight, false))
+                                    TriggerServerEvent('PapaGTraffic:setLight', GetEntityCoords(trafficLight, false))
                                     lastTrafficLight = trafficLight
                                     Citizen.Wait(TRAFFIC_LIGHT_DURATION_MS)
                                     break  -- Exit the loop for the emergency vehicle

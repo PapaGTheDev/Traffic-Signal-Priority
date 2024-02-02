@@ -5,3 +5,4 @@ Video: https://www.youtube.com/watch?v=bpD9AMaiRbU
 Instructions: Download latest Release, Unzip, upload to your resources directory.
 In server.cfg add ensure Traffic-Signal-Priority, start resource or restart server.
 
+Credits to https://github.com/bepo13/FiveM-SmartTrafficLights/tree/master for some of the logic and original "Smart Traffic Idea"
